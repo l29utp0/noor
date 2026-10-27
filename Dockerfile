@@ -1,4 +1,6 @@
-FROM golang:1.25-alpine AS build
+FROM golang:1.27.3-alpine3.24 AS build
+RUN apk add --no-cache --upgrade 'ca-certificates>=20261020-r0' \
+	&& update-ca-certificates
 WORKDIR /src
 COPY go.mod go.sum ./
 RUN go mod download

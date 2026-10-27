@@ -1,6 +1,6 @@
 module noor
 
-go 1.25.0
+go 1.27.3
 
 require (
 	github.com/loynet/ptchan-gateway/clients/go v0.1.0

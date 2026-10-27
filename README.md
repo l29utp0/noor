@@ -126,7 +126,7 @@ internal/storage         SQLite setup and schema utilities
 
 ## Run locally
 
-Requirements: Go 1.25 or newer and a Telegram bot token. The threads watcher
+Requirements: Go 1.27.3 or newer and a Telegram bot token. The threads watcher
 also needs a ptchan-gateway integration secret.
 
 ```bash
@@ -141,10 +141,7 @@ unknown TOML keys and invalid enabled-watcher configuration stop Noor before it
 starts.
 
 Set either `threads.enabled` or `streams.enabled` to `false` to run only the
-other watcher. A streams-only process does not need a gateway secret. Remove
-old `[[streams.channel]]` entries: Noor now polls `https://ptch.net/stream.json`.
-Stop Noor and drop its SQLite database before deploying this schema change;
-pending notifications and thread state will be lost.
+other watcher. A streams-only process does not need a gateway secret.
 
 The gateway integration must send signed events to Noor's stable
 `/internal/ptchan/events` endpoint.
